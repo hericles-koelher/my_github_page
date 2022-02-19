@@ -19,7 +19,7 @@ class ContactList extends StatelessWidget {
         ),
         Expanded(
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
             children: [
               IconButton(
                 onPressed: () {

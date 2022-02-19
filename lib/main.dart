@@ -2,6 +2,7 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_github_page/widgets/contact_list.dart';
+import 'package:my_github_page/widgets/footer.dart';
 
 void main() {
   runApp(const MyGithubPage());
@@ -19,21 +20,21 @@ class MyGithubPage extends StatelessWidget {
           children: [
             Expanded(
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Flexible(
                     child: Image.asset("assets/images/avatar.png"),
                   ),
                   Expanded(
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         const Spacer(),
                         AnimatedTextKit(
                           animatedTexts: [
-                            TypewriterAnimatedText(
+                            TyperAnimatedText(
                               "Welcome to my website!",
-                              speed: const Duration(milliseconds: 100),
+                              speed: const Duration(milliseconds: 115),
+                              curve: Curves.easeInOut,
                               textAlign: TextAlign.center,
                               textStyle: GoogleFonts.bebasNeue(
                                 fontSize: 40,
@@ -80,14 +81,7 @@ class MyGithubPage extends StatelessWidget {
               ),
             ),
             const Divider(),
-            const SizedBox(
-              height: 40,
-              child: Center(
-                child: Text(
-                  "Made with 💜 and Flutter",
-                ),
-              ),
-            ),
+            const Footer(),
           ],
         ),
       ),
