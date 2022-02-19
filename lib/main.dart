@@ -13,12 +13,7 @@ class MyGithubPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData.dark().copyWith(
-        // scaffoldBackgroundColor: Colors.deepPurple[900],
-        colorScheme: ColorScheme.fromSwatch(
-          primarySwatch: Colors.deepPurple,
-        ),
-      ),
+      theme: ThemeData.dark(),
       home: Scaffold(
         body: Column(
           children: [
@@ -54,8 +49,9 @@ class MyGithubPage extends StatelessWidget {
                             children: [
                               Container(
                                 decoration: BoxDecoration(
-                                    color: Colors.deepPurple,
-                                    borderRadius: BorderRadius.circular(10)),
+                                  color: Colors.deepPurple,
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
                               ),
                               Center(
                                 child: AnimatedTextKit(
