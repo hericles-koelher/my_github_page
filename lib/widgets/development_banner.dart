@@ -1,4 +1,3 @@
-import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -16,15 +15,10 @@ class DevelopmentBanner extends StatelessWidget {
           ),
         ),
         Center(
-          child: AnimatedTextKit(
-            repeatForever: true,
-            animatedTexts: [
-              WavyAnimatedText(
-                "Session Under Development",
-                textStyle: GoogleFonts.lato(fontSize: 30),
-                speed: const Duration(milliseconds: 350),
-              ),
-            ],
+          child: Text(
+            "Session Under Development",
+            style: GoogleFonts.lato(fontSize: 30),
+            textAlign: TextAlign.center,
           ),
         ),
       ],
