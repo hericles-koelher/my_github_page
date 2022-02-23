@@ -4,8 +4,14 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ContactList extends StatelessWidget {
+  final double titleSize;
+
   static const double splashRadius = 25;
-  const ContactList({Key? key}) : super(key: key);
+
+  const ContactList({
+    Key? key,
+    this.titleSize = 25,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +20,7 @@ class ContactList extends StatelessWidget {
         Text(
           "Contact Me:",
           style: GoogleFonts.bebasNeue(
-            fontSize: 25,
+            fontSize: titleSize,
           ),
         ),
         Expanded(

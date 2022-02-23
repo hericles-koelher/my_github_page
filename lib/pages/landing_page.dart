@@ -13,24 +13,58 @@ class LandingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Expanded(
-            child: ResponsiveBuilder(
-              buildForSmartphone: (context) {
-                return const Padding(
-                  padding: EdgeInsets.all(15.0),
-                  child: DevelopmentBanner(),
-                );
-              },
-              buildForTablet: (context) {
-                return const Padding(
-                  padding: EdgeInsets.all(15.0),
-                  child: DevelopmentBanner(),
-                );
-              },
-              buildForDesktop: (context) {
-                return Row(
+      body: ResponsiveBuilder(
+        buildForSmartphone: (context) {
+          return const Padding(
+            padding: EdgeInsets.all(15.0),
+            child: DevelopmentBanner(),
+          );
+        },
+        buildForTablet: (context) {
+          return Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 100,
+            ),
+            child: Column(
+              children: [
+                const Spacer(),
+                Text(
+                  "Welcome to my website!",
+                  style: GoogleFonts.bebasNeue(
+                    fontSize: 50,
+                  ),
+                ),
+                const Spacer(),
+                Flexible(
+                  flex: 3,
+                  child: Image.asset("assets/images/avatar.png"),
+                ),
+                const Spacer(),
+                const Expanded(
+                  flex: 4,
+                  child: AboutSession(
+                    titleSize: 40,
+                    textSize: 24,
+                  ),
+                ),
+                const Spacer(),
+                const Expanded(
+                  child: ContactList(
+                    titleSize: 30,
+                  ),
+                ),
+                const Spacer(),
+                const Divider(),
+                const Footer(),
+              ],
+            ),
+          );
+        },
+        buildForDesktop: (context) {
+          return Column(
+            children: [
+              Expanded(
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Flexible(
@@ -43,7 +77,7 @@ class LandingPage extends StatelessWidget {
                           Text(
                             "Welcome to my website!",
                             style: GoogleFonts.bebasNeue(
-                              fontSize: 40,
+                              fontSize: 50,
                             ),
                           ),
                           const Spacer(),
@@ -60,13 +94,13 @@ class LandingPage extends StatelessWidget {
                       ),
                     ),
                   ],
-                );
-              },
-            ),
-          ),
-          const Divider(),
-          const Footer(),
-        ],
+                ),
+              ),
+              const Divider(),
+              const Footer(),
+            ],
+          );
+        },
       ),
     );
   }

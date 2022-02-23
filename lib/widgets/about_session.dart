@@ -4,13 +4,20 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class AboutSession extends StatelessWidget {
-  const AboutSession({Key? key}) : super(key: key);
+  final double titleSize;
+  final double textSize;
+
+  const AboutSession({
+    Key? key,
+    this.titleSize = 30,
+    this.textSize = 18,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     var customSpacer = const SizedBox(height: 15);
     var commonTextStyle = GoogleFonts.lato(
-      fontSize: 18,
+      fontSize: textSize,
       fontWeight: FontWeight.w300,
       color: Theme.of(context).textTheme.bodyText1?.color,
     );
@@ -21,7 +28,7 @@ class AboutSession extends StatelessWidget {
       children: [
         Text(
           "About Me",
-          style: GoogleFonts.bebasNeue(fontSize: 30),
+          style: GoogleFonts.bebasNeue(fontSize: titleSize),
         ),
         customSpacer,
         RichText(

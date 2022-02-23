@@ -5,7 +5,7 @@ class ResponsiveBuilder extends StatelessWidget {
   final Widget Function(BuildContext) buildForTablet;
   final Widget Function(BuildContext) buildForDesktop;
 
-  static const int kSmartphoneBreakpoint = 480;
+  static const int kSmartphoneBreakpoint = 320;
   static const int kTableBreakpoint = 768;
   static const int kDesktopBreakpoint = 1024;
 
