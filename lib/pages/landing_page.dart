@@ -3,7 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:my_github_page/widgets/about_session.dart';
 
 import '../widgets/contact_list.dart';
-import '../widgets/development_banner.dart';
 import '../widgets/footer.dart';
 import '../widgets/responsive_builder.dart';
 
@@ -15,9 +14,43 @@ class LandingPage extends StatelessWidget {
     return Scaffold(
       body: ResponsiveBuilder(
         buildForSmartphone: (context) {
-          return const Padding(
-            padding: EdgeInsets.all(15.0),
-            child: DevelopmentBanner(),
+          var customSpacer = const SizedBox(height: 20);
+
+          return Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 15,
+            ),
+            child: ListView(
+              children: [
+                customSpacer,
+                Text(
+                  "Welcome to my website!",
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.bebasNeue(
+                    fontSize: 25,
+                  ),
+                ),
+                Image.asset(
+                  "assets/images/avatar.png",
+                  height: 200,
+                ),
+                customSpacer,
+                const AboutSession(
+                  titleSize: 20,
+                  textSize: 16,
+                  maxHeight: 150,
+                ),
+                customSpacer,
+                const ContactList(
+                  titleSize: 20,
+                  maxHeight: 50,
+                ),
+                customSpacer,
+                const Footer(
+                  fontSize: 14,
+                ),
+              ],
+            ),
           );
         },
         buildForTablet: (context) {
